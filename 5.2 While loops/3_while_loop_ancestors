@@ -1,0 +1,29 @@
+# We start by considering the year 2020.
+year_considered = 2020  # This is the current year we are starting from.
+
+# Initially, we assume there were 2 ancestors in the year 2020.
+num_ancestors = 2  # The number of ancestors in the year being considered.
+
+# We assume that a new generation is born approximately every 20 years.
+years_per_generation = 20  # This is the time gap between generations.
+
+# Step 1: Get a year from the user.
+# This asks the user to input a year in the past, including negative years (for B.C.).
+user_year = int(input('Enter a past year (neg. for B.C.): '))  
+print()  # Prints a blank line to separate the input from the output.
+
+# Step 2: Start the while loop to calculate ancestors.
+# The loop will keep running as long as the year we are considering (year_considered) 
+# is greater than or equal to the user's input year.
+while year_considered >= user_year:
+    
+    # Print the number of ancestors for the current year.
+    # Example: In 2020, the output might be 'Ancestors in 2020: 2'
+    print(f'Ancestors in {year_considered}: {num_ancestors}')
+    
+    # Multiply the number of ancestors by 2 for the next generation.
+    # This assumes that each ancestor had 2 parents, so the number of ancestors doubles.
+    num_ancestors = num_ancestors * 2
+    
+    # Move backward in time by 20 years (which is about one generation).
+    year_considered = year_considered - years_per_generation
